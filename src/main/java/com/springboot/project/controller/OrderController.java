@@ -27,7 +27,7 @@ public class OrderController {
             @RequestParam("Authorization") String jwt) throws Exception {
         User user = userService.findUserByJwtToken(jwt);
 
-        Order order =orderService.createOrder(req,user)
+        Order order =orderService.createOrder(req,user);
         return new ResponseEntity<>(order, HttpStatus.OK);
     }
     @GetMapping("/order/user")
